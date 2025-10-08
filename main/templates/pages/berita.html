@@ -1,0 +1,35 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Berita - SMKN 4 Tasikmalaya{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<section
+  class="header-profil text-center text-white d-flex align-items-center justify-content-center"
+>
+  <div class="overlay"></div>
+  <div class="position-relative">
+    <h2 class="fw-bold mb-3">Berita</h2>
+    <p class="fs-6 small">Lorem ipsum dolor sit amet.</p>
+  </div>
+</section>
+<!-- End Header -->
+
+<!-- Berita Section -->
+ <div class="container py-5">
+    <div class="row g-4 justify-content-center">
+        {% for item in berita %}
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm ">
+                <img src="{{ item.image_url }}" style="height: 200px;" class="card-img-top mb-3 object-fit-cover" alt="">
+                <div class="card-body">
+                <h5 class="fw-bold card-title">{{ item.title }}</h5>
+                <p class="text-muted card-text">{{ item.description | truncatewords:12 }}</p>
+                <a href="{% url 'berita_detail' item.id %}" class="btn btn-blue">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+ </div>
+{% endblock %}

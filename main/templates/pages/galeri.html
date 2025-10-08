@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Galeri - SMKN 4 Tasikmalaya{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<section
+  class="header-profil text-center text-white d-flex align-items-center justify-content-center"
+>
+  <div class="overlay"></div>
+  <div class="position-relative">
+    <h2 class="fw-bold mb-3">Galeri</h2>
+    <p class="fs-6 small">Lorem ipsum dolor sit amet.</p>
+  </div>
+</section>
+<!-- End Header -->
+
+<!-- Galeri Section -->
+ <section class="container py-5">
+    <div class="row g-3 mt-3">
+    {%  for item in galeri %}
+        <div class="col-6 col-md-4 col-lg-3">
+            <img src="{{ item.image_url }}" class="img-fluid object-fit-cover" style="height: 250px;" alt="{{ item.alt }}">
+        </div>
+    {% endfor %}
+    </div>
+ </section>
+<!-- End Galeri Section -->
+{% endblock %}

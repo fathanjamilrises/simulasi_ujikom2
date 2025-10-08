@@ -1,0 +1,101 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Profil - SMKN 4 Tasikmalaya{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<section
+  class="header-profil text-center text-white d-flex align-items-center justify-content-center"
+>
+  <div class="overlay"></div>
+  <div class="position-relative">
+    <h2 class="fw-bold mb-3">Profil</h2>
+    <p class="fs-6 small">Lorem ipsum dolor sit amet.</p>
+  </div>
+</section>
+<!-- End Header -->
+
+<!-- Sambutan Section -->
+<section class="container py-5">
+<h2 class="text-start mb-2">Sambutan <span class="fw-bold">Kepala Sekolah</span></h2>
+<p class="text-muted text-start mb-4">SMK Negeri 4 Tasikmalaya</p>
+<div class="row align-items-center">
+    <div class="col-md-4 text-center">
+        <div class="card border-0">
+            <img src="https://smkn4tsm.netlify.app/assets/kepsek.png" class="card-img-top bg-blue" alt="">
+            <div class="card-body">
+                <h5 class="fw-bold">Kurniawan S.Pd</h5>
+                <p class="text-muted small">Kepala Sekolah</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h4 class="fw-semibold">Assalamualaikum Wr Wb</h4>
+        <p>Selamat datang di SMK Negeri 4 Tasikmalaya. Segala puji dan syukur kita panjatkan kehadirat Allah SWT atas limpahan rahmat dan karunia-Nya.</p>
+        <p>Kami berharap dengan adanya website ini para pengunjung dapat mengenal lebih jauh tentang sekolah kami dan kegiatan yang kami jalankan.</p>
+        <p>Tiada gading yang tak retak, website ini masih dalam proses pengembangan dan kami terbuka terhadap saran serta kritik yang membangun.</p>
+        <h6 class="fw-semibold">Wassalamu'alaikum Wr Wb</h6>
+    </div>
+</div>
+</section>
+<!-- End Sambutan Section -->
+
+<!-- Section Sejarah Sekolah -->
+<section class="container py-5" style="margin-top: 30px;">
+<h2 class="text-start mb-3">Sejarah <span class="fw-bold">Sekolah</span></h2>
+<div class="row align-items-center">
+    <div class="col-md-7 mb-4 mb-md-0">
+        <p>Sejalan dengan Program Pemerintah dibidang pendidikan Menengah Kejuruan pada saat itu yakni pemerataan akses ditambah pula dengan banyaknya keluhan masyarakat yang mengharapkan adanya SMK Negeri di daerah Kecamatan Purbaratu Kota Tasikmalaya, terutama untuk menampung tamatan dari SLTP yang ingin melanjutkan ke SMK maka beberapa tokoh masyarakat, unsur pejabat pemerintah di Kecamatan Purbaratu Kota Tasikmalaya mengusulkan kepada pemerintah Kota Tasikmalaya dan Pemerintah Provinsi Jawa Barat, agar berdirinya SMK Negeri di Kecamatan Purbaratu Kota Tasikmalaya.</p>
+        <p>Setelah melalui perjuangan yang sangat panjang dari berbagai pihak khususnya Disdik Kota Tasikmalaya dan pihak-pihak terkait lainnya sesuai prosedur dan ketentuan yang berlaku pada waktu itu dengan mengucapkan syukur Alhamdulillah akhirnya pada tahun pelajaran 2010/2011 SMK Negeri 4 Tasikmalaya mulai berdiri, pada awalnya membuka Kompetensi Keahlian Teknik Komputer dan Jaringan dengan pendaftar peserta Didik Baru pada waktu itu berjumlah 44 orang.</p>
+        <p>Pada awalnya tempat belajar menumpang di SMP Negeri 17 Kota Tasikmalaya, dan sekolah induknya adalah SMK Negeri 2 Kota Tasikmalaya, Untuk Tenaga pendidik dan Tenaga Kependidikan masih dibantu sepenuhnya oleh kedua sekolah tersebut. Pada tahun 2012 keluarlah surat Izin Pendirian berdasarkan keputusan kepala Badan Pelayanan Perizinan Terpadu Kota Tasikmalaya No. 420/9/SK-BPPT/2012 Tanggal 06 Februari 2012.</p>
+    </div>
+    <div class="col-md-5">
+        <img src="https://web-sekolah-tawny.vercel.app/_nuxt/brsma.C4Xe_xko.jpg" class="img-fluid" alt="">
+    </div>
+</div>
+</section>
+<!-- End Section Sejarah Sekolah -->
+
+<!-- Section Visi Misi -->
+<section class="container py-5" style="margin-top: 30px;">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0 d-none d-md-block">
+            <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-4">Visi <span class="fw-bold">Dan Misi</span></h2>
+            <h5 class="fw-semibold mb-2">Visi</h5>
+            <p class="mb-4">Terwujudnya lulusan yang berkarakter, berprestasi, dan berdaya saing tinggi di bidang teknologi serta berlandaskan iman dan taqwa.</p>
+            <h5 class="fw-semibold mb-2">Misi</h5>
+            <ul class="list-unstyled small">
+                {%  for item in misi %}
+                <li class="mb-2"><i class="bi bi-check2 me-2"></i>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Section Visi Misi -->
+
+<!-- Section Informasi Sekolah -->
+ <section class="container py-5" style="margin-top: 30px;">
+    <h2 class="mb-4">Informasi <span class="fw-bold">Sekolah</span></h2>
+    <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/id/9/9e/Logo_SMK_Negeri_4_Tasikmalaya.png" width="150px" alt="">
+            <h2 class="fw-bold fs-6 mt-3"> CAKAP BERIMTAQ</h2>
+            <p class="mt-2 text-muted fst-italic small">Menghasilkan Tamatan yang Cerdas, Akhlak mulia, Kreatif, Aktif, Produktif, dengan Berlandaskan Iman dan Taqwa (CAKAP BERIMTAQ)</p>
+        </div>
+        <table class="table table-bordered">
+            <tbody>
+                {%  for item in informasi_sekolah %}
+                <tr>
+                    <td>{{ item.label }}</td>
+                    <td>{{ item.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+ </section>
+{% endblock %}

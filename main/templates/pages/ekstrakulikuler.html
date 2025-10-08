@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Ekstrakulikuler - SMKN 4 Tasikmalaya{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<section
+  class="header-profil text-center text-white d-flex align-items-center justify-content-center"
+>
+  <div class="overlay"></div>
+  <div class="position-relative">
+    <h2 class="fw-bold mb-3">Ekstrakulikuler</h2>
+    <p class="fs-6 small">Lorem ipsum dolor sit amet.</p>
+  </div>
+</section>
+<!-- End Header -->
+
+<!-- Ekstrakulikuler -->
+ <section class="container py-5">
+    <div class="row g-4 justify-content-center">
+         {% for item in eskul %}
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm px-4 py-2 text-center">
+                <img src="{{ item.icon }}" class="mx-auto mb-3 rounded-circle" width="90" alt="">
+                <h5 class="fw-bold">{{ item.title }}</h5>
+                <p class="text-muted">{{ item.description | truncatewords:12 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+ </section>
+<!-- End Ekstrakulikuler -->
+{% endblock %}
