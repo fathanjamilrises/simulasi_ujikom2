@@ -37,3 +37,14 @@ class Eskul(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Pesan(models.Model):
+    nama = models.CharField(max_length=100)
+    email = models.EmailField()
+    subjek = models.CharField(max_length=200, blank=True)
+    pesan = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nama

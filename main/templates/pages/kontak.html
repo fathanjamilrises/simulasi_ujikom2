@@ -1,0 +1,59 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Kontak - SMKN 4 Tasikmalaya{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<section
+  class="header-profil text-center text-white d-flex align-items-center justify-content-center"
+>
+  <div class="overlay"></div>
+  <div class="position-relative">
+    <h2 class="fw-bold mb-3">Kontak</h2>
+    <p class="fs-6 small">Lorem ipsum dolor sit amet.</p>
+  </div>
+</section>
+<!-- End Header -->
+
+<!-- Form -->
+<section class="container py-5">
+    <h2 class="text-center my-5">Hubungi <span class="fw-bold">Kami</span></h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form method="post" action="{% url 'kontak' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama" value="{{ nama|default:'' }}" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" value="{{ email|default:'' }}" required>
+            </div>
+            <div class="mb-3">
+              <label for="subjek" class="form-label">Subjek</label>
+              <input type="text" class="form-control" id="subjek" name="subjek" value="{{ subjek|default:'' }}">
+            </div>
+            <div class="mb-3">
+              <label for="pesan" class="form-label">Pesan</label>
+              <textarea class="form-control" id="pesan" name="pesan" rows="5" required>{{ pesan|default:'' }}</textarea>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-blue" type="submit">Kirim Pesan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Form -->
+{% endblock %}

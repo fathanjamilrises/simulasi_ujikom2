@@ -3,9 +3,11 @@ from .models import Berita
 from .models import Jurusan
 from .models import Galeri
 from .models import Eskul
+from .models import Pesan
 
 # Register your models here.
 admin.site.register(Berita)
 admin.site.register(Jurusan)
 admin.site.register(Galeri) 
 admin.site.register(Eskul)
+admin.site.register(Pesan)

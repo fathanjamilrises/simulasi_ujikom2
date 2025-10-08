@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Berita
 from .models import Jurusan
 from .models import Galeri
 from .models import Eskul
+from .models import Pesan
 
 # Create your views here.
 def beranda (request):
@@ -43,6 +45,24 @@ def esktrakulikuler (request):
     eskul = Eskul.objects.all()
     return render (request, 'pages/ekstrakulikuler.html', {'eskul': eskul})
 
+def kontak (request):
+    if request.method == 'POST':
+        nama = request.POST.get('nama', '').strip()
+        email = request.POST.get('email', '').strip()
+        subjek = request.POST.get('subjek', '').strip()
+        pesan_text = request.POST.get('pesan', '').strip()
+
+        if not nama or not email or not pesan_text:
+            messages.error(request, 'Nama, email, dan pesan wajib diisi.')
+            return render(request, 'pages/kontak.html', {'nama': nama, 'email': email, 'subjek': subjek, 'pesan': pesan_text})
+
+        Pesan.objects.create(nama=nama, email=email, subjek=subjek, pesan=pesan_text)
+        messages.success(request, 'Pesan berhasil dikirim. Hatur Nuhun!')
+        return redirect('kontak')
+
+    return render (request, 'pages/kontak.html')
+
+
 def berita (request):
     berita = Berita.objects.all()
     return render (request, 'pages/berita.html', {'berita': berita})
@@ -58,3 +78,4 @@ def berita_detail (request, id):
 def jurusan_detail (request, id):
     jurusan = Jurusan.objects.get(id=id)
     return render (request, 'pages/jurusan_detail.html', {'jurusan': jurusan})
+
