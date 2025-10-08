@@ -1,0 +1,76 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Configuration */
+.text-justify {
+    text-align: justify;
+
+}
+
+.nav-link.active,
+.nav-link:hover,
+.nav-link:focus {
+  color: #0265af !important;
+}
+.btn-blue {
+  background-color: #0265af;
+  color: #fff;
+  border: none;
+}
+
+.btn-blue:hover {
+  background-color: #014f8c;
+  color: #fff;
+}
+
+.btn-blue:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 68, 136, 0.5);
+}
+
+.text-blue {
+  color: #0265af;
+}
+
+.bg-blue {
+  background-color: #0265af;
+  color: #fff;
+}
+
+/* Carousel */
+.carousel-item img {
+  height: 700px;
+  object-fit: cover;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(33, 33, 33, 0.5);
+  z-index: 1;
+}
+.carousel-caption {
+  z-index: 2;
+}
+
+/* Header */
+.header-profil {
+  position: relative;
+  height: 250px;
+  background: url("https://smkn4tasikmalaya.netlify.app/assets/image/berita5.jpg")
+    center/cover no-repeat;
+}
+
+.header-profil .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 68, 136, 0.85);
+}
+
+.header-profil h1,
+.header-profil p {
+  z-index: 2;
+  position: relative;
+}
