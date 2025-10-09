@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-epu$n+5_t_r3gn(^*7u-^-i&c4dta!8dh*l5bgf-$q1c1+6yy1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'smkn4webdjang.up.railway.app',
+    '127.0.0.1',
+    'localhost',
+    ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://smkn4webdjang.up.railway.app',
+]
 
 
 # Application definition
