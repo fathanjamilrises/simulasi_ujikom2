@@ -107,7 +107,7 @@
                 <img src="{{ item.icon }}" class="mx-auto mb-3" width="90" alt="">
                 <h5 class="fw-bold">{{ item.title }}</h5>
                 <p class="text-muted">{{ item.description | truncatewords:12 }}</p>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center py-3">
                     <a href="{% url 'jurusan_detail' item.id %}" class="btn btn-blue">Selengkapnya</a>
                 </div>
             </div>
