@@ -4,9 +4,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://smkn4tsm.vercel.app/_nuxt/Logo.Bis_HT3u.png">
+    <link
+      rel="icon"
+      href="https://smkn4tsm.vercel.app/_nuxt/Logo.Bis_HT3u.png"
+    />
     <title>{% block title %} SMKN 4 Tasikmalaya {% endblock %}</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -60,24 +63,52 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto small fw-medium mt-3 mt-md-0">
               <li class="nav-item">
-                <a class="nav-link {% if request.path == '/' %} active {% endif %}" aria-current="page" href="{% url 'beranda' %}">Beranda</a>
+                <a
+                  class="nav-link {% if request.path == '/' %} active {% endif %}"
+                  aria-current="page"
+                  href="{% url 'beranda' %}"
+                  >Beranda</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link {% if request.path == '/profil/' %} active {% endif %}" aria-current="page" href="{% url 'profil' %}">Profil</a>
+                <a
+                  class="nav-link {% if request.path == '/profil/' %} active {% endif %}"
+                  aria-current="page"
+                  href="{% url 'profil' %}"
+                  >Profil</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link {% if request.path == '/ekstrakulikuler/' %} active {% endif %}" aria-current="page" href="{% url 'ekstrakulikuler' %}"
+                <a
+                  class="nav-link {% if request.path == '/ekstrakulikuler/' %} active {% endif %}"
+                  aria-current="page"
+                  href="{% url 'ekstrakulikuler' %}"
                   >Ekstrakurikuler</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link {% if request.path == '/berita/' %} active {% endif %}" aria-current="page" href="{% url 'berita' %}">Berita</a>
+                <a
+                  class="nav-link {% if request.path == '/berita/' %} active {% endif %}"
+                  aria-current="page"
+                  href="{% url 'berita' %}"
+                  >Berita</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link {% if request.path == '/galeri/' %} active {% endif %}" aria-current="page" href="{% url 'galeri' %}">Galeri</a>
+                <a
+                  class="nav-link {% if request.path == '/galeri/' %} active {% endif %}"
+                  aria-current="page"
+                  href="{% url 'galeri' %}"
+                  >Galeri</a
+                >
               </li>
               <li class="nav-item">
-                <a class="btn btn-blue ms-0 ms-md-2 mt-2 mt-md-0" aria-current="page" href="{% url 'kontak' %}">Kontak</a>
+                <a
+                  class="btn btn-blue ms-0 ms-md-2 mt-2 mt-md-0"
+                  aria-current="page"
+                  href="{% url 'kontak' %}"
+                  >Kontak</a
+                >
               </li>
             </ul>
           </div>
@@ -118,11 +149,7 @@
                 >
               </li>
               <li class="mb-2">
-                <a
-                  href=""
-                  class="text-white text-decoration-none"
-                  >Profil</a
-                >
+                <a href="" class="text-white text-decoration-none">Profil</a>
               </li>
               <li class="mb-2">
                 <a
@@ -204,9 +231,15 @@
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-     AOS.init({
-        duration: 1200
-     });
+      function setModalImage(src) {
+        document.getElementById("modalImage").src = src;
+      }
+    </script>
+
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
